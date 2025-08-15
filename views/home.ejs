@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do list</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <nav class="navbar bg-dark border-bottom border-body   navbar sticky-top bg-body-tertiary navbar" data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">To do list</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="http://localhost:8080/home"><button class="btn btn-light">Home</button></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="http://localhost:8080/home/newtask"><button class="btn btn-light">New task</button></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"><button class="btn btn-light">Task list </button></a>
+                        </li>
+
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                        <button class="btn btn-dark">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </nav>
+
+    <div class="container">
+        <div class="tasksection">
+            <%for (task of tasks){ %>
+                <div class="card">
+                    <div class="card-header">
+                        task
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%= task.title %>
+                        </h5>
+                        <p class="card-text">
+                            <%= task.description %>
+                        </p>
+                        <div id="button-nav">
+                            <a href="http://localhost:8080/home/<%= task.id %>/edit" class="btn btn-dark button">EDIT</a>
+                            <form class="button" method="post" action="/home/<%=task.id %>?_method=DELETE">
+                                <button class="btn btn-dark button">DELETE</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+                <% } %>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: rgb(145, 112, 194, 0.2);
+}
+
+.navbar {
+    border-radius: 0.5rem;
+}
+
+.container {
+    margin-top: 1rem;
+    margin-left: 0;
+}
+
+.tasksection {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: top;
+}
+
+.card {
+    height: max-content;
+    margin: 0.5rem;
+}
+
+#button-nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button {
+    margin-right: 1rem;
+}
